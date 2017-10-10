@@ -1,0 +1,70 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`getConfig returns webpack config merged with user config and enriched with happy pack config when there is user wepback config and project uses babel with plugins returns correctly merged config 1`] = `
+Object {
+  "entry": "./.uxpin-temp/components.js",
+  "module": Object {
+    "rules": Array [
+      Object {
+        "exclude": /node_modules/,
+        "test": /\\.jsx\\?\\$/,
+        "use": "happypack/loader",
+      },
+    ],
+  },
+  "output": Object {
+    "filename": "./.uxpin-temp/designsystemlibrary.js",
+    "libraryTarget": "commonjs",
+  },
+  "plugins": Array [
+    HappyPlugin {
+      "config": Object {
+        "compilerId": "default",
+        "id": "1",
+        "loaders": Array [
+          Object {
+            "loader": "babel-loader",
+            "options": Object {
+              "plugins": Array [
+                "transform-class-properties",
+                "transform-object-rest-spread",
+              ],
+              "presets": Array [
+                Array [
+                  "env",
+                  Object {
+                    "targets": Object {
+                      "browsers": Array [
+                        "last 2 versions",
+                      ],
+                      "node": "current",
+                    },
+                  },
+                ],
+                "react",
+              ],
+            },
+          },
+        ],
+        "threads": 3,
+        "verbose": true,
+      },
+      "id": "1",
+      "name": "HappyPack",
+      "state": Object {
+        "baseLoaderRequest": "",
+        "debug": false,
+        "foregroundThreadPool": null,
+        "loaders": Array [],
+        "verbose": false,
+      },
+    },
+  ],
+  "resolve": Object {
+    "extensions": Array [
+      ".js",
+      ".jsx",
+    ],
+  },
+}
+`;
