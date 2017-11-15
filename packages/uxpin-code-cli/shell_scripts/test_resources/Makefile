@@ -7,7 +7,7 @@ test-resources: ../../test/resources/repos/nordnet-ui-kit ../../test/resources/r
 	cd ../../test/resources/repos \
 	&& git clone https://github.com/nordnet/nordnet-ui-kit.git \
 	&& cd nordnet-ui-kit \
-	&& git checkout d914edd5f97cadb284f7f47b783106c86fe430d9 \
+	&& git checkout v1.24.0 \
 	&& mkdir ./yarn-cache \
 	&& yarn install --cache-folder ./yarn-cache \
 	&& rm -rf ./yarn-cache

@@ -37,6 +37,10 @@ Input
     📜 documentation: ✔
     💡 examples: ✘
 
+InstrumentBadge
+    📜 documentation: ✔
+    💡 examples: ✘
+
 LabeledValue
     📜 documentation: ✔
     💡 examples: ✘
@@ -53,11 +57,19 @@ Pane
     📜 documentation: ✔
     💡 examples: ✘
 
+ProgressBar
+    📜 documentation: ✔
+    💡 examples: ✘
+
 RadioGroup
     📜 documentation: ✔
     💡 examples: ✘
 
 SegmentedControl
+    📜 documentation: ✔
+    💡 examples: ✘
+
+SharevilleLogo
     📜 documentation: ✔
     💡 examples: ✘
 
@@ -126,6 +138,9 @@ warning Cannot parse type of a property 'focusable' in:
 src/components/icon/icon.jsx
 
 warning Cannot serialize component properties in:
+src/components/instrument-badge/instrument-badge.jsx
+
+warning Cannot serialize component properties in:
 src/components/labeled-value/labeled-value.jsx
 
 warning Cannot serialize component properties in:
@@ -133,6 +148,9 @@ src/components/li/li.jsx
 
 warning Cannot serialize component properties in:
 src/components/pane/pane.jsx
+
+warning Cannot serialize component properties in:
+src/components/progress-bar/progress-bar.jsx
 
 warning Cannot serialize component properties in:
 src/components/spinner/spinner.jsx

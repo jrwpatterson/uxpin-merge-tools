@@ -49,6 +49,10 @@ Input
     📜 documentation: ✔
     💡 examples: ✘
 
+InstrumentBadge
+    📜 documentation: ✔
+    💡 examples: ✘
+
 LabeledValue
     📜 documentation: ✔
     💡 examples: ✘
@@ -65,11 +69,19 @@ Pane
     📜 documentation: ✔
     💡 examples: ✘
 
+ProgressBar
+    📜 documentation: ✔
+    💡 examples: ✘
+
 RadioGroup
     📜 documentation: ✔
     💡 examples: ✘
 
 SegmentedControl
+    📜 documentation: ✔
+    💡 examples: ✘
+
+SharevilleLogo
     📜 documentation: ✔
     💡 examples: ✘
 

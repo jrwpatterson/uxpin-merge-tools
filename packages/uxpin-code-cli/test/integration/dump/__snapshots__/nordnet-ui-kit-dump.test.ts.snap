@@ -526,8 +526,19 @@ exports[`The --dump option run for the nordnet-ui-kit repository prints the JSON
 						value: 16
 					},
 					type: {
-						name: 'number',
-						structure: {}
+						name: 'union',
+						structure: {
+							elements: [
+								{
+									name: 'string',
+									structure: {}
+								},
+								{
+									name: 'number',
+									structure: {}
+								}
+							]
+						}
 					}
 				},
 				{
@@ -538,8 +549,19 @@ exports[`The --dump option run for the nordnet-ui-kit repository prints the JSON
 						value: 16
 					},
 					type: {
-						name: 'number',
-						structure: {}
+						name: 'union',
+						structure: {
+							elements: [
+								{
+									name: 'string',
+									structure: {}
+								},
+								{
+									name: 'number',
+									structure: {}
+								}
+							]
+						}
 					}
 				},
 				{
@@ -774,6 +796,15 @@ exports[`The --dump option run for the nordnet-ui-kit repository prints the JSON
 					}
 				},
 				{
+					description: 'Only used when type === textarea',
+					isRequired: false,
+					name: 'lineCount',
+					type: {
+						name: 'number',
+						structure: {}
+					}
+				},
+				{
 					description: 'Manipulates the value of the input, eg. removing unsupported characters from number inputs',
 					isRequired: false,
 					name: 'valueFormatter',
@@ -837,6 +868,20 @@ exports[`The --dump option run for the nordnet-ui-kit repository prints the JSON
 					}
 				}
 			],
+			examples: []
+		},
+		{
+			dirPath: 'src/components/instrument-badge',
+			implementation: {
+				framework: 'reactjs',
+				lang: 'javascript',
+				path: 'src/components/instrument-badge/instrument-badge.jsx'
+			},
+			documentation: {
+				path: 'src/components/instrument-badge/instrument-badge.md'
+			},
+			name: 'InstrumentBadge',
+			properties: [],
 			examples: []
 		},
 		{
@@ -959,6 +1004,20 @@ exports[`The --dump option run for the nordnet-ui-kit repository prints the JSON
 				path: 'src/components/pane/pane.md'
 			},
 			name: 'Pane',
+			properties: [],
+			examples: []
+		},
+		{
+			dirPath: 'src/components/progress-bar',
+			implementation: {
+				framework: 'reactjs',
+				lang: 'javascript',
+				path: 'src/components/progress-bar/progress-bar.jsx'
+			},
+			documentation: {
+				path: 'src/components/progress-bar/progress-bar.md'
+			},
+			name: 'ProgressBar',
 			properties: [],
 			examples: []
 		},
@@ -1137,6 +1196,45 @@ exports[`The --dump option run for the nordnet-ui-kit repository prints the JSON
 								}
 							]
 						}
+					}
+				}
+			],
+			examples: []
+		},
+		{
+			dirPath: 'src/components/shareville-logo',
+			implementation: {
+				framework: 'reactjs',
+				lang: 'javascript',
+				path: 'src/components/shareville-logo/shareville-logo.jsx'
+			},
+			documentation: {
+				path: 'src/components/shareville-logo/shareville-logo.md'
+			},
+			name: 'SharevilleLogo',
+			properties: [
+				{
+					description: '',
+					isRequired: false,
+					name: 'onlyIcon',
+					defaultValue: {
+						value: false
+					},
+					type: {
+						name: 'boolean',
+						structure: {}
+					}
+				},
+				{
+					description: '',
+					isRequired: false,
+					name: 'height',
+					defaultValue: {
+						value: 27
+					},
+					type: {
+						name: 'number',
+						structure: {}
 					}
 				}
 			],
@@ -1901,6 +1999,20 @@ warning Cannot parse type of a property 'focusable' in:
 src/components/icon/icon.jsx
 
 warning Cannot serialize component properties in:
+src/components/instrument-badge/instrument-badge.jsx
+Error: Multiple exported component definitions found.
+    at Context.exportDeclaration (../../../../node_modules/react-docgen/dist/resolver/findExportedComponentDefinition.js:116:13)
+    at Context.invokeVisitorMethod (../../../../node_modules/ast-types/lib/path-visitor.js:344:49)
+    at Visitor.PVp.visitWithoutReset (../../../../node_modules/ast-types/lib/path-visitor.js:196:32)
+    at NodePath.each (../../../../node_modules/ast-types/lib/path.js:101:26)
+    at visitChildren (../../../../node_modules/ast-types/lib/path-visitor.js:219:18)
+    at Visitor.PVp.visitWithoutReset (../../../../node_modules/ast-types/lib/path-visitor.js:204:20)
+    at visitChildren (../../../../node_modules/ast-types/lib/path-visitor.js:246:25)
+    at Visitor.PVp.visitWithoutReset (../../../../node_modules/ast-types/lib/path-visitor.js:204:20)
+    at Visitor.PVp.visit (../../../../node_modules/ast-types/lib/path-visitor.js:133:29)
+    at Object.visit (../../../../node_modules/ast-types/lib/path-visitor.js:101:55)
+
+warning Cannot serialize component properties in:
 src/components/labeled-value/labeled-value.jsx
 Error: Multiple exported component definitions found.
     at Context.exportDeclaration (../../../../node_modules/react-docgen/dist/resolver/findExportedComponentDefinition.js:116:13)
@@ -1930,6 +2042,20 @@ Error: Multiple exported component definitions found.
 
 warning Cannot serialize component properties in:
 src/components/pane/pane.jsx
+Error: Multiple exported component definitions found.
+    at Context.exportDeclaration (../../../../node_modules/react-docgen/dist/resolver/findExportedComponentDefinition.js:116:13)
+    at Context.invokeVisitorMethod (../../../../node_modules/ast-types/lib/path-visitor.js:344:49)
+    at Visitor.PVp.visitWithoutReset (../../../../node_modules/ast-types/lib/path-visitor.js:196:32)
+    at NodePath.each (../../../../node_modules/ast-types/lib/path.js:101:26)
+    at visitChildren (../../../../node_modules/ast-types/lib/path-visitor.js:219:18)
+    at Visitor.PVp.visitWithoutReset (../../../../node_modules/ast-types/lib/path-visitor.js:204:20)
+    at visitChildren (../../../../node_modules/ast-types/lib/path-visitor.js:246:25)
+    at Visitor.PVp.visitWithoutReset (../../../../node_modules/ast-types/lib/path-visitor.js:204:20)
+    at Visitor.PVp.visit (../../../../node_modules/ast-types/lib/path-visitor.js:133:29)
+    at Object.visit (../../../../node_modules/ast-types/lib/path-visitor.js:101:55)
+
+warning Cannot serialize component properties in:
+src/components/progress-bar/progress-bar.jsx
 Error: Multiple exported component definitions found.
     at Context.exportDeclaration (../../../../node_modules/react-docgen/dist/resolver/findExportedComponentDefinition.js:116:13)
     at Context.invokeVisitorMethod (../../../../node_modules/ast-types/lib/path-visitor.js:344:49)
