@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/node:8.1.2
+      - image: circleci/node:6.11.4
     working_directory: ~/project/
     steps:
       - checkout
@@ -12,7 +12,7 @@ jobs:
             - ./
   uxpin-code-cli:
     docker:
-      - image: circleci/node:8.1.2
+      - image: circleci/node:6.11.4
     resource_class: large
     working_directory: ~/project/packages/uxpin-code-cli
     steps:
