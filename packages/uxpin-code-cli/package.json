@@ -67,7 +67,7 @@
     "ts-jest": "^21.0.0",
     "tslint": "^5.9.1",
     "tslint-config-uxpin": "^1.5.0",
-    "typescript": "^2.5.2"
+    "typescript": "^2.7.1"
   },
   "dependencies": {
     "babel-standalone": "^6.26.0",

@@ -9,6 +9,7 @@
     "skipLibCheck": true,
     "baseUrl": "./",
     "jsx": "react",
+    "pretty": true,
     "paths": {
       "*": [
         "node_modules/*",
