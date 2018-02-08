@@ -11,7 +11,7 @@ export function serializeExamples(filePath:string):Promise<ExamplesSerialization
   return readFile(filePath, { encoding: 'utf8' })
     .then((content) => parse(content).children
       .filter((node) => node.type === Syntax.CodeBlock && isSupportedLang(node.lang) && node.value)
-      .map((codeBlock:TokenWithValue) => ({ code: codeBlock.value })))
+      .map((codeBlock) => ({ code: (codeBlock as TokenWithValue).value })))
     .then((examples) => ({ result: examples, warnings: [] }))
     .catch(thunkGetResultForInvalidExamples(filePath));
 }
