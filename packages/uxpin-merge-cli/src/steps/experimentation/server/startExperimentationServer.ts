@@ -2,6 +2,7 @@ import { createServer, Server } from 'http';
 import { EPID } from '../epid/EPID';
 import { printServerReadyMessage } from './console/printServerReadyMessage';
 import { createLibraryBundleHandler } from './handler/bundle/createLibraryBundleHandler';
+import { GetRepositoryPointerHandler } from './handler/code/GetRepositoryPointerHandler';
 import { GetLibrariesHandler } from './handler/libraries/GetLibrariesHandler';
 import { PageSaveHandler } from './handler/page/save/PageSaveHandler';
 import { SetActivePageHandler } from './handler/page/set/SetActivePageHandler';
@@ -36,4 +37,5 @@ function registerHandlers(router:ServerRouter, context:ExperimentationServerCont
   router.register('/ajax/dmsDPPage/SetActivePage/', new SetActivePageHandler(context));
   router.register('/code/library.js', createLibraryBundleHandler(context));
   router.register('/libraries/', new GetLibrariesHandler(context));
+  router.register('/code/repositoryPointer', new GetRepositoryPointerHandler(context));
 }
