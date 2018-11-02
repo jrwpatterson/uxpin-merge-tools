@@ -124,8 +124,7 @@ describe('serializeTSComponent', () => {
       });
     });
 
-    // @todo Implement support for shape property values in TypeScript
-    xit('serializes component with interface property type', () => {
+    it('serializes component with interface property type', () => {
       // given
       const component:ComponentImplementationInfo = getImplementation('ClassInterfaceTypes');
       const expectedProps:ComponentMetadata = {
@@ -160,8 +159,7 @@ describe('serializeTSComponent', () => {
       });
     });
 
-    // @todo Implement support for shape property values in TypeScript
-    xit('serializes component with imported interface property type', () => {
+    it('serializes component with imported interface property type', () => {
       // given
       const component:ComponentImplementationInfo = getImplementation('FunctionWithImportedTypes');
       const expectedProps:ComponentMetadata = {

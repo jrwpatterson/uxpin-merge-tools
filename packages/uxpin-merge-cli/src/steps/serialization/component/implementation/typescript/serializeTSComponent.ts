@@ -1,10 +1,15 @@
-import { isNull, toPairs } from 'lodash';
+import { get, isNull, reduce, toPairs } from 'lodash';
 import { parse as parsePath } from 'path';
 import { ComponentDoc, parse, PropItem } from 'react-docgen-typescript/lib';
 import * as ts from 'typescript';
 import * as TJS from 'typescript-json-schema';
 import { ComponentImplementationInfo } from '../../../../discovery/component/ComponentInfo';
-import { ComponentPropertyDefinition, PropertyType, PropertyTypeName } from '../ComponentPropertyDefinition';
+import {
+  ComponentPropertyDefinition,
+  PropertyType,
+  PropertyTypeName,
+  ShapeTypeStructure,
+} from '../ComponentPropertyDefinition';
 import { ImplSerializationResult } from '../ImplSerializationResult';
 import { convertTypeName } from './type/convertTypeName';
 
@@ -65,18 +70,47 @@ function getSchema(componentFilePath:string, typeName:string):TJS.Definition | n
 }
 
 function serializeComplexType(propType:PropItem, componentFilePath:string):PropertyType | undefined {
-  if (propType.parent) {
-    const parentSchema:TJS.Definition | null = getSchema(componentFilePath, propType.parent.name);
-    const propertyTypeSchema:TJS.Definition = parentSchema!.properties![propType.name];
-    if (propertyTypeSchema.enum) {
-      let elements:PropertyType[] = [];
-      if (isPrimitiveTypeUnion(propertyTypeSchema.enum)) {
-        elements = propertyTypeSchema.enum.map(mapPrimitiveTypesUnion);
-      }
-      return { name: 'union', structure: { elements } };
-    }
+  if (!propType.parent) {
+    return;
   }
-  return;
+  const rootSchema:TJS.Definition | null = getSchema(componentFilePath, propType.parent.name);
+  if (!rootSchema || !rootSchema.properties || !rootSchema.properties[propType.name]) {
+    return;
+  }
+  const typeDefinition:TJS.Definition = rootSchema.properties[propType.name];
+  return convertTypeDefinitionToPropertyType(typeDefinition, rootSchema);
+}
+
+function isPlainTypeDefinition(type:TJS.Definition['type']):type is PropertyTypeName {
+  return typeof type === 'string' && PLAIN_PROPERTY_TYPES.includes(type as PropertyTypeName);
+}
+
+function convertTypeDefinitionToPropertyType(typeDefinition:TJS.Definition, rootSchema:TJS.Definition):PropertyType {
+  if (typeDefinition.enum) {
+    let elements:PropertyType[] = [];
+    if (isPrimitiveTypeUnion(typeDefinition.enum)) {
+      elements = typeDefinition.enum.map(mapPrimitiveTypesUnion);
+    }
+    return { name: 'union', structure: { elements } };
+  }
+  if (typeDefinition.$ref) {
+    const nestedDefinition:TJS.Definition = get(rootSchema, schemaPathToLodashPath(typeDefinition.$ref));
+    return convertTypeDefinitionToPropertyType(nestedDefinition, rootSchema);
+  }
+  if (typeDefinition.properties) {
+    return {
+      name: 'shape',
+      structure: reduce<TJS.Definition, ShapeTypeStructure>(typeDefinition.properties,
+        (structure, propertyDefinition, propertyName) => {
+          structure[propertyName] = convertTypeDefinitionToPropertyType(propertyDefinition, rootSchema);
+          return structure;
+        }, {}),
+    };
+  }
+  if (isPlainTypeDefinition(typeDefinition.type)) {
+    return { name: typeDefinition.type, structure: {} };
+  }
+  return { name: 'unsupported', structure: { raw: JSON.stringify(typeDefinition) } };
 }
 
 function mapPrimitiveTypesUnion(value:TJS.PrimitiveType):PropertyType {
@@ -119,4 +153,9 @@ function getDefaultComponentFrom(filePath:string):ComponentDoc {
 
 function isPrimitiveTypeUnion(enumType:TJS.PrimitiveType[] | TJS.Definition[]):enumType is TJS.PrimitiveType[] {
   return ['number', 'boolean', 'string'].includes(typeof enumType[0]) || isNull(enumType[0]);
+}
+
+function schemaPathToLodashPath(schemaPath:string):string {
+  const [, ...segments] = schemaPath.split('/');
+  return segments.join('.');
 }
