@@ -6,6 +6,7 @@ export interface Props {
    */
   children?:React.ReactNode;
   appearance:'secondary' | 'primary' | 'link';
+  size?:PropSizeEnum;
 }
 
 export default class ClassEnumTypes extends React.PureComponent<Props> {
@@ -20,4 +21,10 @@ export default class ClassEnumTypes extends React.PureComponent<Props> {
       </div>
     );
   }
+}
+
+enum PropSizeEnum {
+  Large = 'large',
+  Medium = 'medium',
+  Small = 'small',
 }

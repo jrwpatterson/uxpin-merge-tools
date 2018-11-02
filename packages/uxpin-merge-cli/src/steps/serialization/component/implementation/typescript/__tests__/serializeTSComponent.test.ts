@@ -73,6 +73,21 @@ describe('serializeTSComponent', () => {
               },
             },
           },
+          {
+            description: '',
+            isRequired: false,
+            name: 'size',
+            type: {
+              name: 'union',
+              structure: {
+                elements: expect.arrayContaining([
+                  { name: 'literal', structure: { value: 'large' } },
+                  { name: 'literal', structure: { value: 'medium' } },
+                  { name: 'literal', structure: { value: 'small' } },
+                ]),
+              },
+            },
+          },
         ],
       };
 
