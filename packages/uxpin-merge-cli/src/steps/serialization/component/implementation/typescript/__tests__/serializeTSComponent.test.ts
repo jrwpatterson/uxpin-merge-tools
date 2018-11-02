@@ -182,6 +182,12 @@ describe('serializeTSComponent', () => {
         properties: [
           {
             description: '',
+            isRequired: false,
+            name: 'children',
+            type: { name: 'string', structure: {} },
+          },
+          {
+            description: '',
             isRequired: true,
             name: 'item',
             type: {

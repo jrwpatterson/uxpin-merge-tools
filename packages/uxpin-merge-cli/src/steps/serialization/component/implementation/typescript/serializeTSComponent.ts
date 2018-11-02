@@ -1,6 +1,6 @@
-import { get, isNull, reduce, toPairs } from 'lodash';
+import { get, isNull, reduce, toPairs, values } from 'lodash';
 import { parse as parsePath } from 'path';
-import { ComponentDoc, parse, PropItem } from 'react-docgen-typescript/lib';
+import { ComponentDoc, parse, PropItem, Props } from 'react-docgen-typescript/lib';
 import * as ts from 'typescript';
 import * as TJS from 'typescript-json-schema';
 import { ComponentImplementationInfo } from '../../../../discovery/component/ComponentInfo';
@@ -11,35 +11,44 @@ import {
   ShapeTypeStructure,
 } from '../ComponentPropertyDefinition';
 import { ImplSerializationResult } from '../ImplSerializationResult';
-import { convertTypeName } from './type/convertTypeName';
 
 export function serializeTSComponent(component:ComponentImplementationInfo):Promise<ImplSerializationResult> {
   return new Promise((resolve) => {
     const componentDoc:ComponentDoc = getDefaultComponentFrom(component.path);
-    const result:ComponentPropertyDefinition[] = toPairs(componentDoc.props)
-      .map(([propName, propType]) => propItemToPropDefinition(component.path, propName, propType));
     resolve({
       result: {
         name: componentDoc.displayName,
-        properties: result,
+        properties: serializeProps(componentDoc, component.path),
       },
       warnings: [],
     });
   });
 }
 
-function propItemToPropDefinition(fileLocation:string, propName:string, propItem:PropItem):ComponentPropertyDefinition {
-  return {
-    description: propItem.description,
-    isRequired: propItem.required,
-    name: propName,
-    type: getPropType(propItem, fileLocation),
-    ...getDefaultPropValue(propItem),
-  };
+function serializeProps(componentDoc:ComponentDoc, componentPath:string):ComponentPropertyDefinition[] {
+  const propertiesTypeName:string | undefined = getNameOfTypeOfPropertiesObject(componentDoc.props);
+  if (!propertiesTypeName) {
+    return [];
+  }
+  const propsSchema:TJS.Definition | null = getSchema(componentPath, propertiesTypeName);
+  if (!propsSchema || !propsSchema.properties) {
+    return [];
+  }
+  const properties:Array<[string, TJS.Definition]> = toPairs(propsSchema.properties);
+  return properties.map<ComponentPropertyDefinition>(([propName, propType]) => {
+    const propItem:PropItem | undefined = componentDoc.props[propName];
+    return {
+      ...getDefaultPropValue(propItem),
+      description: propType.description || '',
+      isRequired: !!(propItem && propItem.required),
+      name: propName,
+      type: convertTypeDefinitionToPropertyType(propType, propsSchema),
+    };
+  });
 }
 
-function getDefaultPropValue({ defaultValue }:PropItem):Pick<ComponentPropertyDefinition, 'defaultValue'> {
-  return defaultValue ? { defaultValue } : {};
+function getDefaultPropValue(propItem:PropItem | undefined):Pick<ComponentPropertyDefinition, 'defaultValue'> {
+  return propItem && propItem.defaultValue ? { defaultValue: propItem.defaultValue } : {};
 }
 
 const PLAIN_PROPERTY_TYPES:PropertyTypeName[] = [
@@ -123,18 +132,6 @@ function mapPrimitiveTypesUnion(value:TJS.PrimitiveType):PropertyType {
   return { name: 'unsupported', structure: {} };
 }
 
-function getPropType(propType:PropItem, componentFilePath:string):PropertyType {
-  const convertedTypeName:PropertyTypeName = convertTypeName(propType.type.name);
-  if (PLAIN_PROPERTY_TYPES.includes(convertedTypeName)) {
-    return { name: convertedTypeName, structure: {} };
-  }
-  const serializedComplexType:PropertyType | undefined = serializeComplexType(propType, componentFilePath);
-  if (serializedComplexType) {
-    return serializedComplexType;
-  }
-  return { name: 'unsupported', structure: { raw: propType.type.name } };
-}
-
 function getDefaultComponentFrom(filePath:string):ComponentDoc {
   let components:ComponentDoc[];
   try {
@@ -158,4 +155,12 @@ function isPrimitiveTypeUnion(enumType:TJS.PrimitiveType[] | TJS.Definition[]):e
 function schemaPathToLodashPath(schemaPath:string):string {
   const [, ...segments] = schemaPath.split('/');
   return segments.join('.');
+}
+
+function getNameOfTypeOfPropertiesObject(props:Props):string | undefined {
+  const itemWithParentDefinition:PropItem | undefined = values(props).find((item) => !!item.parent);
+  if (!itemWithParentDefinition) {
+    return;
+  }
+  return itemWithParentDefinition.parent!.name;
 }
