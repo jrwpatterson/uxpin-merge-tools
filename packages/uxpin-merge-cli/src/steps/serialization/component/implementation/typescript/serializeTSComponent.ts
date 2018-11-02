@@ -23,13 +23,18 @@ export function serializeTSComponent(component:ComponentImplementationInfo):Prom
   });
 }
 
-function propItemToPropDefinition(fileLocation:string, propName:string, propType:PropItem):ComponentPropertyDefinition {
+function propItemToPropDefinition(fileLocation:string, propName:string, propItem:PropItem):ComponentPropertyDefinition {
   return {
-    description: propType.description,
-    isRequired: propType.required,
+    description: propItem.description,
+    isRequired: propItem.required,
     name: propName,
-    type: getPropType(propType, fileLocation),
+    type: getPropType(propItem, fileLocation),
+    ...getDefaultPropValue(propItem),
   };
+}
+
+function getDefaultPropValue({ defaultValue }:PropItem):Pick<ComponentPropertyDefinition, 'defaultValue'> {
+  return defaultValue ? { defaultValue } : {};
 }
 
 const PLAIN_PROPERTY_TYPES:PropertyTypeName[] = [

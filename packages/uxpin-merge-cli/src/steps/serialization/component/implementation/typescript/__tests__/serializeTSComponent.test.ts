@@ -84,8 +84,7 @@ describe('serializeTSComponent', () => {
       });
     });
 
-    // @todo Implement support for default property values in TypeScript
-    xit('serializes class component with default property values', () => {
+    it('serializes class component with default property values', () => {
       // given
       const component:ComponentImplementationInfo = getImplementation('ClassWithDefaults');
       const expectedProps:ComponentMetadata = {
@@ -106,11 +105,11 @@ describe('serializeTSComponent', () => {
             type: {
               name: 'union',
               structure: {
-                elements: [
+                elements: expect.arrayContaining([
                   { name: 'literal', structure: { value: 'secondary' } },
                   { name: 'literal', structure: { value: 'primary' } },
                   { name: 'literal', structure: { value: 'link' } },
-                ],
+                ]),
               },
             },
           },
