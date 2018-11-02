@@ -1,6 +1,9 @@
 import * as React from 'react';
 
 export interface Props {
+  /**
+   * Any element
+   */
   children?:React.ReactNode;
   appearance:'secondary' | 'primary' | 'link';
 }

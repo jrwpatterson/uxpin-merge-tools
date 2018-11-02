@@ -46,15 +46,14 @@ describe('serializeTSComponent', () => {
       });
     });
 
-    // @todo Implement support for union types in TypeScript
-    xit('serializes class component with enum property types', () => {
+    it('serializes class component with enum property types', () => {
       // given
       const component:ComponentImplementationInfo = getImplementation('ClassEnumTypes');
       const expectedProps:ComponentMetadata = {
         name: 'ClassEnumTypes',
         properties: [
           {
-            description: '',
+            description: 'Any element',
             isRequired: false,
             name: 'children',
             type: { name: 'node', structure: {} },
@@ -66,11 +65,11 @@ describe('serializeTSComponent', () => {
             type: {
               name: 'union',
               structure: {
-                elements: [
+                elements: expect.arrayContaining([
                   { name: 'literal', structure: { value: 'secondary' } },
                   { name: 'literal', structure: { value: 'primary' } },
                   { name: 'literal', structure: { value: 'link' } },
-                ],
+                ]),
               },
             },
           },
