@@ -2,9 +2,9 @@ import * as React from 'react';
 
 export interface Props {
   /**
-   * Any element
+   * String only
    */
-  children?:React.ReactNode;
+  children?:string;
   appearance:'secondary' | 'primary' | 'link';
   size?:PropSizeEnum;
 }

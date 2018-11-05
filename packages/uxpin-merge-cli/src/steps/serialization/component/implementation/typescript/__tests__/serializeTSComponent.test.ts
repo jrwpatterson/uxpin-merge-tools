@@ -53,10 +53,10 @@ describe('serializeTSComponent', () => {
         name: 'ClassEnumTypes',
         properties: [
           {
-            description: 'Any element',
+            description: 'String only',
             isRequired: false,
             name: 'children',
-            type: { name: 'node', structure: {} },
+            type: { name: 'string', structure: {} },
           },
           {
             description: '',
