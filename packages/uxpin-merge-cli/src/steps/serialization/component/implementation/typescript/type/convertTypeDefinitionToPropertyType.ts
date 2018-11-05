@@ -5,12 +5,14 @@ import { AnyTypeStrategy } from './strategy/AnyTypeStrategy';
 import { EnumTypeStrategy } from './strategy/EnumTypeStrategy';
 import { PlainTypeStrategy } from './strategy/PlainTypeStrategy';
 import { PropertyTypeSerializationStrategy } from './strategy/PropertyTypeSerializationStrategy';
+import { ReactElementTypeStrategy } from './strategy/ReactElementTypeStrategy';
 import { ShapeTypeStrategy } from './strategy/ShapeTypeStrategy';
 import { ArrayTypeStrategy } from './strategy/TypedArrayTypeStrategy';
 import { TypeReferenceStrategy } from './strategy/TypeReferenceStrategy';
 import { UnsupportedTypeStrategy } from './strategy/UnsupportedTypeStrategy';
 
 const STRATEGIES:PropertyTypeSerializationStrategy[] = [
+  new ReactElementTypeStrategy(),
   new EnumTypeStrategy(),
   new PlainTypeStrategy(),
   new ShapeTypeStrategy(),
