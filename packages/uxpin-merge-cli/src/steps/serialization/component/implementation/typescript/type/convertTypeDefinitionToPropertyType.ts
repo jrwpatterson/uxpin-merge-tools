@@ -1,6 +1,7 @@
 import { PropItem } from 'react-docgen-typescript';
 import * as TJS from 'typescript-json-schema';
 import { PropertyType } from '../../ComponentPropertyDefinition';
+import { AnyTypeStrategy } from './strategy/AnyTypeStrategy';
 import { EnumTypeStrategy } from './strategy/EnumTypeStrategy';
 import { PlainTypeStrategy } from './strategy/PlainTypeStrategy';
 import { PropertyTypeSerializationStrategy } from './strategy/PropertyTypeSerializationStrategy';
@@ -13,6 +14,7 @@ const STRATEGIES:PropertyTypeSerializationStrategy[] = [
   new PlainTypeStrategy(),
   new ShapeTypeStrategy(),
   new TypeReferenceStrategy(),
+  new AnyTypeStrategy(),
 ];
 
 export function convertTypeDefinitionToPropertyType(
