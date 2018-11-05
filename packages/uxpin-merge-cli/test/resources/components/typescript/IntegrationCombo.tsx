@@ -4,6 +4,7 @@ import { ExternalShapeType } from './ExternalShapeType';
 export interface ComboProps {
   anyProp:any;
   arrayProp:any[];
+  unionTypeArrayProp:Array<string | number>;
   booleanProp:boolean;
   elementProp:React.ReactElement<any>;
   functionProp:(a:string) => number;

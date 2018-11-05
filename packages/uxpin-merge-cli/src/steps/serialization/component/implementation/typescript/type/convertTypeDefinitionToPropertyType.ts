@@ -6,6 +6,7 @@ import { EnumTypeStrategy } from './strategy/EnumTypeStrategy';
 import { PlainTypeStrategy } from './strategy/PlainTypeStrategy';
 import { PropertyTypeSerializationStrategy } from './strategy/PropertyTypeSerializationStrategy';
 import { ShapeTypeStrategy } from './strategy/ShapeTypeStrategy';
+import { ArrayTypeStrategy } from './strategy/TypedArrayTypeStrategy';
 import { TypeReferenceStrategy } from './strategy/TypeReferenceStrategy';
 import { UnsupportedTypeStrategy } from './strategy/UnsupportedTypeStrategy';
 
@@ -15,6 +16,7 @@ const STRATEGIES:PropertyTypeSerializationStrategy[] = [
   new ShapeTypeStrategy(),
   new TypeReferenceStrategy(),
   new AnyTypeStrategy(),
+  new ArrayTypeStrategy(),
 ];
 
 export function convertTypeDefinitionToPropertyType(

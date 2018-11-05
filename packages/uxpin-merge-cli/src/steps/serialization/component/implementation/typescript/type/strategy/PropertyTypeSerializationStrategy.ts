@@ -8,5 +8,3 @@ export interface PropertyTypeSerializationStrategy {
 
   serialize(typeDefinition:TJS.Definition, propItem:PropItem | undefined, rootSchema:TJS.Definition):PropertyType;
 }
-// tslint:disable:prefer-function-over-method
-

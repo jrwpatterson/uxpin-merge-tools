@@ -28,7 +28,13 @@ describe('getComponentMetadata – integration', () => {
             description: '',
             isRequired: true,
             name: 'arrayProp',
-            type: { name: 'typedArray', structure: { memberType: { name: 'any', structure: {} } } },
+            type: { name: 'array', structure: {} },
+          },
+          {
+            description: '',
+            isRequired: true,
+            name: 'unionTypeArrayProp',
+            type: { name: 'array', structure: {} },
           },
           {
             description: '',
@@ -77,22 +83,7 @@ describe('getComponentMetadata – integration', () => {
             description: '',
             isRequired: true,
             name: 'typedArray',
-            type: {
-              name: 'typedArray', structure: {
-                memberType: {
-                  name: 'shape', structure: {
-                    name: { name: 'string', structure: {} },
-                    nested: {
-                      name: 'shape', structure: {
-                        keyA: { name: 'string', structure: {} },
-                        keyB: { name: 'string', structure: {} },
-                      },
-                    },
-                    value: { name: 'number', structure: {} },
-                  },
-                },
-              },
-            },
+            type: { name: 'array', structure: {} },
           },
           {
             description: '',
@@ -123,12 +114,6 @@ describe('getComponentMetadata – integration', () => {
             isRequired: false,
             name: 'id',
             type: { name: 'number', structure: {} },
-          },
-          {
-            description: 'Alternative syntax for a function property',
-            isRequired: false,
-            name: 'methodProp',
-            type: { name: 'func', structure: {} },
           },
         ],
       };
