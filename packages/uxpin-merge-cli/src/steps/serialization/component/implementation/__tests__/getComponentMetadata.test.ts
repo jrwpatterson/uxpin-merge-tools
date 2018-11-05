@@ -77,7 +77,7 @@ describe('getComponentMetadata – integration', () => {
             description: '',
             isRequired: true,
             name: 'objectProp',
-            type: { name: 'object', structure: {} },
+            type: { name: 'shape', structure: {} },
           },
           {
             description: '',
