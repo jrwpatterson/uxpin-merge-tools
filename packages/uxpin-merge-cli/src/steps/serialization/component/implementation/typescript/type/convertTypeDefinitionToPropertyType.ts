@@ -2,6 +2,7 @@ import { PropItem } from 'react-docgen-typescript';
 import * as TJS from 'typescript-json-schema';
 import { PropertyType } from '../../ComponentPropertyDefinition';
 import { AnyTypeStrategy } from './strategy/AnyTypeStrategy';
+import { DictionaryTypeStrategy } from './strategy/DictionaryTypeStrategy';
 import { EnumTypeStrategy } from './strategy/EnumTypeStrategy';
 import { FunctionTypeStrategy } from './strategy/FunctionTypeStrategy';
 import { NodeTypeStrategy } from './strategy/NodeTypeStrategy';
@@ -19,6 +20,7 @@ const STRATEGIES:PropertyTypeSerializationStrategy[] = [
   new FunctionTypeStrategy(),
   new EnumTypeStrategy(),
   new PlainTypeStrategy(),
+  new DictionaryTypeStrategy(),
   new ShapeTypeStrategy(),
   new TypeReferenceStrategy(),
   new AnyTypeStrategy(),
