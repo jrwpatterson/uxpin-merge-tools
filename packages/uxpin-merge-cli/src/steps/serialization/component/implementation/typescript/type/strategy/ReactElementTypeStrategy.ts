@@ -5,7 +5,7 @@ import { PropertyTypeSerializationStrategy } from './PropertyTypeSerializationSt
 
 // tslint:disable:prefer-function-over-method
 
-const REACT_ELEMENT_REF_REGEX:RegExp = /ReactElement/;
+export const REACT_ELEMENT_REF_REGEX:RegExp = /ReactElement/;
 
 export class ReactElementTypeStrategy implements PropertyTypeSerializationStrategy {
   public isApplicableFor(typeDefinition:TJS.Definition, propItem?:PropItem):boolean {

@@ -14,6 +14,7 @@ export interface ComboProps {
   typedArray:ExternalShapeType[];
   dictionaryProp:{ [key:string]:number };
   empty:undefined;
+  children?:React.ReactNode;
   /**
    * Description for `value` property
    */

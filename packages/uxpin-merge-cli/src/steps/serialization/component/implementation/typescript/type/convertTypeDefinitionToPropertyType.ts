@@ -4,6 +4,7 @@ import { PropertyType } from '../../ComponentPropertyDefinition';
 import { AnyTypeStrategy } from './strategy/AnyTypeStrategy';
 import { EnumTypeStrategy } from './strategy/EnumTypeStrategy';
 import { FunctionTypeStrategy } from './strategy/FunctionTypeStrategy';
+import { NodeTypeStrategy } from './strategy/NodeTypeStrategy';
 import { PlainTypeStrategy } from './strategy/PlainTypeStrategy';
 import { PropertyTypeSerializationStrategy } from './strategy/PropertyTypeSerializationStrategy';
 import { ReactElementTypeStrategy } from './strategy/ReactElementTypeStrategy';
@@ -14,6 +15,7 @@ import { UnsupportedTypeStrategy } from './strategy/UnsupportedTypeStrategy';
 
 const STRATEGIES:PropertyTypeSerializationStrategy[] = [
   new ReactElementTypeStrategy(),
+  new NodeTypeStrategy(),
   new FunctionTypeStrategy(),
   new EnumTypeStrategy(),
   new PlainTypeStrategy(),
