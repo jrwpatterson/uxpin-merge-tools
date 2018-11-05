@@ -22,10 +22,6 @@ export interface ComboProps {
    * Description for optional `id` property
    */
   id?:number;
-  /**
-   * Alternative syntax for a function property
-   */
-  methodProp?(a:string):void;
 }
 
 const PrivateComponent:React.StatelessComponent = (props) => {
