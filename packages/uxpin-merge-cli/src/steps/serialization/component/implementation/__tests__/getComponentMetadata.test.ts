@@ -20,6 +20,94 @@ describe('getComponentMetadata – integration', () => {
         properties: [
           {
             description: '',
+            isRequired: true,
+            name: 'anyProp',
+            type: { name: 'any', structure: {} },
+          },
+          {
+            description: '',
+            isRequired: true,
+            name: 'arrayProp',
+            type: { name: 'typedArray', structure: { memberType: { name: 'any', structure: {} } } },
+          },
+          {
+            description: '',
+            isRequired: true,
+            name: 'booleanProp',
+            type: { name: 'boolean', structure: {} },
+          },
+          {
+            description: '',
+            isRequired: true,
+            name: 'elementProp',
+            type: { name: 'element', structure: {} },
+          },
+          {
+            description: '',
+            isRequired: true,
+            name: 'functionProp',
+            type: { name: 'func', structure: {} },
+          },
+          {
+            description: '',
+            isRequired: true,
+            name: 'stringLiteralUnion',
+            type: {
+              name: 'union', structure: {
+                elements: [
+                  { name: 'literal', structure: { value: 'a' } },
+                  { name: 'literal', structure: { value: 'b' } },
+                ],
+              },
+            },
+          },
+          {
+            description: '',
+            isRequired: true,
+            name: 'nodeProp',
+            type: { name: 'node', structure: {} },
+          },
+          {
+            description: '',
+            isRequired: true,
+            name: 'objectProp',
+            type: { name: 'object', structure: {} },
+          },
+          {
+            description: '',
+            isRequired: true,
+            name: 'typedArray',
+            type: {
+              name: 'typedArray', structure: {
+                memberType: {
+                  name: 'shape', structure: {
+                    name: { name: 'string', structure: {} },
+                    nested: {
+                      name: 'shape', structure: {
+                        keyA: { name: 'string', structure: {} },
+                        keyB: { name: 'string', structure: {} },
+                      },
+                    },
+                    value: { name: 'number', structure: {} },
+                  },
+                },
+              },
+            },
+          },
+          {
+            description: '',
+            isRequired: true,
+            name: 'dictionaryProp',
+            type: { name: 'dictionary', structure: { valueType: { name: 'number', structure: {} } } },
+          },
+          {
+            description: '',
+            isRequired: true,
+            name: 'empty',
+            type: { name: 'node', structure: {} },
+          },
+          {
+            description: '',
             isRequired: false,
             name: 'children',
             type: { name: 'node', structure: {} },
@@ -35,6 +123,12 @@ describe('getComponentMetadata – integration', () => {
             isRequired: false,
             name: 'id',
             type: { name: 'number', structure: {} },
+          },
+          {
+            description: 'Alternative syntax for a function property',
+            isRequired: false,
+            name: 'methodProp',
+            type: { name: 'func', structure: {} },
           },
         ],
       };
