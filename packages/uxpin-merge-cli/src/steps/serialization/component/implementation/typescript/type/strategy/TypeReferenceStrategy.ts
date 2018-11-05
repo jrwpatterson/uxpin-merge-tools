@@ -21,7 +21,7 @@ export class TypeReferenceStrategy implements PropertyTypeSerializationStrategy 
   }
 }
 
-function schemaPathToLodashPath(schemaPath:string):string {
+function schemaPathToLodashPath(schemaPath:string):string[] {
   const [, ...segments] = schemaPath.split('/');
-  return segments.join('.');
+  return segments;
 }

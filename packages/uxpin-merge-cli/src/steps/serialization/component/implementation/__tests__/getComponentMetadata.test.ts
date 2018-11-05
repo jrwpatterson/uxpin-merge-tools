@@ -136,8 +136,8 @@ describe('getComponentMetadata – integration', () => {
       // when
       return getComponentMetadata(component).then((serializedProps) => {
         // then
-        expect(serializedProps.result).toEqual(expectedProps);
         expect(serializedProps.warnings).toEqual([]);
+        expect(serializedProps.result).toEqual(expectedProps);
       });
     });
 
