@@ -78,18 +78,6 @@ function getSchema(componentFilePath:string, typeName:string):TJS.Definition | n
   return TJS.generateSchema(program, typeName);
 }
 
-function serializeComplexType(propType:PropItem, componentFilePath:string):PropertyType | undefined {
-  if (!propType.parent) {
-    return;
-  }
-  const rootSchema:TJS.Definition | null = getSchema(componentFilePath, propType.parent.name);
-  if (!rootSchema || !rootSchema.properties || !rootSchema.properties[propType.name]) {
-    return;
-  }
-  const typeDefinition:TJS.Definition = rootSchema.properties[propType.name];
-  return convertTypeDefinitionToPropertyType(typeDefinition, rootSchema);
-}
-
 function isPlainTypeDefinition(type:TJS.Definition['type']):type is PropertyTypeName {
   return typeof type === 'string' && PLAIN_PROPERTY_TYPES.includes(type as PropertyTypeName);
 }
