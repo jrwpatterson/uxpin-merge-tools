@@ -3,6 +3,7 @@ import * as TJS from 'typescript-json-schema';
 import { PropertyType } from '../../ComponentPropertyDefinition';
 import { AnyTypeStrategy } from './strategy/AnyTypeStrategy';
 import { EnumTypeStrategy } from './strategy/EnumTypeStrategy';
+import { FunctionTypeStrategy } from './strategy/FunctionTypeStrategy';
 import { PlainTypeStrategy } from './strategy/PlainTypeStrategy';
 import { PropertyTypeSerializationStrategy } from './strategy/PropertyTypeSerializationStrategy';
 import { ReactElementTypeStrategy } from './strategy/ReactElementTypeStrategy';
@@ -13,6 +14,7 @@ import { UnsupportedTypeStrategy } from './strategy/UnsupportedTypeStrategy';
 
 const STRATEGIES:PropertyTypeSerializationStrategy[] = [
   new ReactElementTypeStrategy(),
+  new FunctionTypeStrategy(),
   new EnumTypeStrategy(),
   new PlainTypeStrategy(),
   new ShapeTypeStrategy(),
