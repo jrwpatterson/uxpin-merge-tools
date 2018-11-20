@@ -1,0 +1,30 @@
+FROM uxpin2/node8:1.2
+
+ARG VAULT_ADDR
+ARG VAULT_TOKEN
+ARG BRANCH=master
+ENV NODE_ENV staging
+ENV CHROME_PATH /usr/bin/google-chrome
+
+SHELL ["/bin/bash", "-l", "-c"]
+
+# install: node.js@8.3 & yarn
+RUN curl -o nodejs.deb https://deb.nodesource.com/node_8.x/pool/main/n/nodejs/nodejs_8.3.0-1nodesource1~xenial1_amd64.deb && \
+    dpkg -i ./nodejs.deb && \
+    rm nodejs.deb && \
+    rm -rf /var/lib/apt/lists/*
+
+# Setup auth to private npm repository
+RUN yarn config set registry https://registry.npmjs.org
+
+COPY . ./
+
+# install: node dependencies
+RUN onvault make dependencies
+
+RUN make test-resources
+RUN make build
+
+RUN mkdir -p /app/.uxpinci
+ADD docker/tools.sh /app/.uxpinci/tools.sh
+

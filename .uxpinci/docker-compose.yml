@@ -1,0 +1,4 @@
+tools:
+  image: ${TEST_IMAGE}
+  entrypoint: ["/app/.uxpinci/tools.sh"]
+  env_file: .env
