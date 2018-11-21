@@ -32,11 +32,8 @@ test-resources: ../../test/resources/repos/nordnet-ui-kit ../../test/resources/r
 	&& ln -s ../../configs/polaris-webpack.config.js ./polaris-webpack.config.js
 
 ../../test/resources/repos/mineral-ui:
-	cd ../../test/resources/repos \
-	&& git clone git@github.com:UXPin/mineral-ui.git \
-	&& cd mineral-ui \
-	&& git remote add official https://github.com/mineral-ui/mineral-ui.git \
-	&& git checkout b825842aeb4244e56977af1a4afc3559caed94f3 \
+	mv /app/mineral-ui ../../test/resources/repos/ \
+	&& cd ../../test/resources/repos/mineral-ui \
 	&& mkdir ./npm-cache \
 	&& npm install --cache=./npm-cache \
 	&& rm -rf ./npm-cache

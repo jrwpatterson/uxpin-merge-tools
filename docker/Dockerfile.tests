@@ -22,9 +22,6 @@ COPY . ./
 # install: node dependencies
 RUN onvault make dependencies
 
-RUN make test-resources
-RUN make build
-
 RUN mkdir -p /app/.uxpinci
 ADD docker/tools.sh /app/.uxpinci/tools.sh
 
