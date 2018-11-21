@@ -2,6 +2,11 @@
 # shellcheck source=./helpers.sh
 source .uxpinci/helpers.sh
 
+# Setup auth to private npm repository
+yarn config set registry https://registry.npmjs.org
+
+# install: node dependencies
+onvault make dependencies
 cd /app/packages/uxpin-merge-cli
 capture_status make test-resources
 capture_status make build
