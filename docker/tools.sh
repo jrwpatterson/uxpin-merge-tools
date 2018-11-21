@@ -2,6 +2,7 @@
 # shellcheck source=./helpers.sh
 source .uxpinci/helpers.sh
 
+mv /app/mineral-ui /app/packages/uxpin-merge-cli/test/resources/repos/
 # Setup auth to private npm repository
 yarn config set registry https://registry.npmjs.org
 
