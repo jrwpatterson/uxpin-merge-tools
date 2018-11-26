@@ -1,0 +1,13 @@
+{
+  "extends": "tslint-config-uxpin",
+  "rules": {
+    "no-function-constructor-with-string-args": false,
+    "no-console": false,
+    "import-name": [
+      true,
+      {
+        "chromeless": "Chromeless"
+      }
+    ]
+  }
+}
