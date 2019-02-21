@@ -467,6 +467,63 @@ describe('serializeJSComponentProps', () => {
       });
     });
 
+    // @todo: enable when spread PropTypes will be supported
+    it.skip('serializes component with PropTypes composed with spread operator', () => {
+      // given
+      const component:ComponentImplementationInfo = getImplementation('FunctionWithSpreadPropTypes');
+      const expectedProps:ComponentMetadata = {
+        name: 'FunctionWithSpreadPropTypes',
+        properties: [
+          {
+            description: '',
+            isRequired: false,
+            name: 'children',
+            type: {
+              name: 'node',
+              structure: {},
+            },
+          },
+          {
+            description: '',
+            isRequired: false,
+            name: 'modifier',
+            type: {
+              name: 'union',
+              structure: {
+                elements: [
+                  { name: 'literal', structure: { value: 'neutral' } },
+                  { name: 'literal', structure: { value: 'danger' } },
+                  { name: 'literal', structure: { value: 'positive' } },
+                ],
+              },
+            },
+          },
+          {
+            description: '',
+            isRequired: true,
+            name: 'appearance',
+            type: {
+              name: 'union',
+              structure: {
+                elements: [
+                  { name: 'literal', structure: { value: 'secondary' } },
+                  { name: 'literal', structure: { value: 'primary' } },
+                  { name: 'literal', structure: { value: 'link' } },
+                ],
+              },
+            },
+          },
+        ],
+      };
+
+      // when
+      return serializeJSComponent(component).then((serializedProps) => {
+        // then
+        expect(serializedProps.result).toEqual(expectedProps);
+        expect(serializedProps.warnings).toEqual([]);
+      });
+    });
+
     it('provides warning details for corrupted default property values', () => {
       // given
       const component:ComponentImplementationInfo = getImplementation('CorruptedDefaultPropertyValue');
