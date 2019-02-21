@@ -1,6 +1,6 @@
 import { readFile } from 'fs-extra';
 import { defaultHandlers, Handler, parse } from 'react-docgen';
-import createImportedProptypeHandler from 'react-docgen-imported-proptype-handler';
+import reactDocgenImportedProptypeHandler from 'react-docgen-imported-proptype-handler';
 import { ComponentDoc } from 'react-docgen-typescript/lib';
 
 export async function getDefaultComponentFrom(filePath:string):Promise<ComponentDoc> {
@@ -8,7 +8,7 @@ export async function getDefaultComponentFrom(filePath:string):Promise<Component
 
   const handlers:Handler[] = [
     ...defaultHandlers,
-    createImportedProptypeHandler(filePath),
+    reactDocgenImportedProptypeHandler(filePath),
   ];
 
   return parse(fileContents, undefined, handlers);
