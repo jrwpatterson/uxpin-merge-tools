@@ -17,4 +17,3 @@
 !/reports/.gitkeep
 
 !/test/resources/configs/*.js
-!/test/resources/components/**/*.js

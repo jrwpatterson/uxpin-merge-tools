@@ -1342,7 +1342,7 @@ exports[`The dump command run for the mineral-ui repository prints the JSON desc
                 }
               },
               \\"description\\": \\"Various messages and labels used by Pagination\\\\n([see example for more details](#rtl))\\",
-              \\"isRequired\\": false,
+              \\"isRequired\\": true,
               \\"name\\": \\"messages\\",
               \\"type\\": {
                 \\"name\\": \\"shape\\",
@@ -10041,8 +10041,10 @@ exports[`The dump command run for the mineral-ui repository prints the JSON desc
                                 \\"structure\\": {}
                               },
                               {
-                                \\"name\\": \\"empty\\",
-                                \\"structure\\": {}
+                                \\"name\\": \\"unsupported\\",
+                                \\"structure\\": {
+                                  \\"raw\\": \\"unknown\\"
+                                }
                               }
                             ]
                           }
@@ -10077,8 +10079,10 @@ exports[`The dump command run for the mineral-ui repository prints the JSON desc
                                 \\"structure\\": {}
                               },
                               {
-                                \\"name\\": \\"empty\\",
-                                \\"structure\\": {}
+                                \\"name\\": \\"unsupported\\",
+                                \\"structure\\": {
+                                  \\"raw\\": \\"unknown\\"
+                                }
                               }
                             ]
                           }
@@ -10205,8 +10209,10 @@ exports[`The dump command run for the mineral-ui repository prints the JSON desc
                                 \\"structure\\": {}
                               },
                               {
-                                \\"name\\": \\"empty\\",
-                                \\"structure\\": {}
+                                \\"name\\": \\"unsupported\\",
+                                \\"structure\\": {
+                                  \\"raw\\": \\"unknown\\"
+                                }
                               }
                             ]
                           }
@@ -10333,8 +10339,10 @@ exports[`The dump command run for the mineral-ui repository prints the JSON desc
                                 \\"structure\\": {}
                               },
                               {
-                                \\"name\\": \\"empty\\",
-                                \\"structure\\": {}
+                                \\"name\\": \\"unsupported\\",
+                                \\"structure\\": {
+                                  \\"raw\\": \\"unknown\\"
+                                }
                               }
                             ]
                           }
@@ -10461,8 +10469,10 @@ exports[`The dump command run for the mineral-ui repository prints the JSON desc
                                 \\"structure\\": {}
                               },
                               {
-                                \\"name\\": \\"empty\\",
-                                \\"structure\\": {}
+                                \\"name\\": \\"unsupported\\",
+                                \\"structure\\": {
+                                  \\"raw\\": \\"unknown\\"
+                                }
                               }
                             ]
                           }
@@ -10589,8 +10599,10 @@ exports[`The dump command run for the mineral-ui repository prints the JSON desc
                                 \\"structure\\": {}
                               },
                               {
-                                \\"name\\": \\"empty\\",
-                                \\"structure\\": {}
+                                \\"name\\": \\"unsupported\\",
+                                \\"structure\\": {
+                                  \\"raw\\": \\"unknown\\"
+                                }
                               }
                             ]
                           }
@@ -10717,8 +10729,10 @@ exports[`The dump command run for the mineral-ui repository prints the JSON desc
                                 \\"structure\\": {}
                               },
                               {
-                                \\"name\\": \\"empty\\",
-                                \\"structure\\": {}
+                                \\"name\\": \\"unsupported\\",
+                                \\"structure\\": {
+                                  \\"raw\\": \\"unknown\\"
+                                }
                               }
                             ]
                           }
@@ -10845,8 +10859,10 @@ exports[`The dump command run for the mineral-ui repository prints the JSON desc
                                 \\"structure\\": {}
                               },
                               {
-                                \\"name\\": \\"empty\\",
-                                \\"structure\\": {}
+                                \\"name\\": \\"unsupported\\",
+                                \\"structure\\": {
+                                  \\"raw\\": \\"unknown\\"
+                                }
                               }
                             ]
                           }
@@ -10973,8 +10989,10 @@ exports[`The dump command run for the mineral-ui repository prints the JSON desc
                                 \\"structure\\": {}
                               },
                               {
-                                \\"name\\": \\"empty\\",
-                                \\"structure\\": {}
+                                \\"name\\": \\"unsupported\\",
+                                \\"structure\\": {
+                                  \\"raw\\": \\"unknown\\"
+                                }
                               }
                             ]
                           }
@@ -11101,8 +11119,10 @@ exports[`The dump command run for the mineral-ui repository prints the JSON desc
                                 \\"structure\\": {}
                               },
                               {
-                                \\"name\\": \\"empty\\",
-                                \\"structure\\": {}
+                                \\"name\\": \\"unsupported\\",
+                                \\"structure\\": {
+                                  \\"raw\\": \\"unknown\\"
+                                }
                               }
                             ]
                           }
@@ -11229,8 +11249,10 @@ exports[`The dump command run for the mineral-ui repository prints the JSON desc
                                 \\"structure\\": {}
                               },
                               {
-                                \\"name\\": \\"empty\\",
-                                \\"structure\\": {}
+                                \\"name\\": \\"unsupported\\",
+                                \\"structure\\": {
+                                  \\"raw\\": \\"unknown\\"
+                                }
                               }
                             ]
                           }
@@ -11309,8 +11331,10 @@ exports[`The dump command run for the mineral-ui repository prints the JSON desc
                                 \\"structure\\": {}
                               },
                               {
-                                \\"name\\": \\"empty\\",
-                                \\"structure\\": {}
+                                \\"name\\": \\"unsupported\\",
+                                \\"structure\\": {
+                                  \\"raw\\": \\"unknown\\"
+                                }
                               }
                             ]
                           }
@@ -11437,8 +11461,10 @@ exports[`The dump command run for the mineral-ui repository prints the JSON desc
                                 \\"structure\\": {}
                               },
                               {
-                                \\"name\\": \\"empty\\",
-                                \\"structure\\": {}
+                                \\"name\\": \\"unsupported\\",
+                                \\"structure\\": {
+                                  \\"raw\\": \\"unknown\\"
+                                }
                               }
                             ]
                           }
@@ -11565,8 +11591,10 @@ exports[`The dump command run for the mineral-ui repository prints the JSON desc
                                 \\"structure\\": {}
                               },
                               {
-                                \\"name\\": \\"empty\\",
-                                \\"structure\\": {}
+                                \\"name\\": \\"unsupported\\",
+                                \\"structure\\": {
+                                  \\"raw\\": \\"unknown\\"
+                                }
                               }
                             ]
                           }
@@ -11693,8 +11721,10 @@ exports[`The dump command run for the mineral-ui repository prints the JSON desc
                                 \\"structure\\": {}
                               },
                               {
-                                \\"name\\": \\"empty\\",
-                                \\"structure\\": {}
+                                \\"name\\": \\"unsupported\\",
+                                \\"structure\\": {
+                                  \\"raw\\": \\"unknown\\"
+                                }
                               }
                             ]
                           }
@@ -11821,8 +11851,10 @@ exports[`The dump command run for the mineral-ui repository prints the JSON desc
                                 \\"structure\\": {}
                               },
                               {
-                                \\"name\\": \\"empty\\",
-                                \\"structure\\": {}
+                                \\"name\\": \\"unsupported\\",
+                                \\"structure\\": {
+                                  \\"raw\\": \\"unknown\\"
+                                }
                               }
                             ]
                           }
@@ -11949,8 +11981,10 @@ exports[`The dump command run for the mineral-ui repository prints the JSON desc
                                 \\"structure\\": {}
                               },
                               {
-                                \\"name\\": \\"empty\\",
-                                \\"structure\\": {}
+                                \\"name\\": \\"unsupported\\",
+                                \\"structure\\": {
+                                  \\"raw\\": \\"unknown\\"
+                                }
                               }
                             ]
                           }
@@ -12077,8 +12111,10 @@ exports[`The dump command run for the mineral-ui repository prints the JSON desc
                                 \\"structure\\": {}
                               },
                               {
-                                \\"name\\": \\"empty\\",
-                                \\"structure\\": {}
+                                \\"name\\": \\"unsupported\\",
+                                \\"structure\\": {
+                                  \\"raw\\": \\"unknown\\"
+                                }
                               }
                             ]
                           }
@@ -12205,8 +12241,10 @@ exports[`The dump command run for the mineral-ui repository prints the JSON desc
                                 \\"structure\\": {}
                               },
                               {
-                                \\"name\\": \\"empty\\",
-                                \\"structure\\": {}
+                                \\"name\\": \\"unsupported\\",
+                                \\"structure\\": {
+                                  \\"raw\\": \\"unknown\\"
+                                }
                               }
                             ]
                           }
@@ -12333,8 +12371,10 @@ exports[`The dump command run for the mineral-ui repository prints the JSON desc
                                 \\"structure\\": {}
                               },
                               {
-                                \\"name\\": \\"empty\\",
-                                \\"structure\\": {}
+                                \\"name\\": \\"unsupported\\",
+                                \\"structure\\": {
+                                  \\"raw\\": \\"unknown\\"
+                                }
                               }
                             ]
                           }
@@ -12377,8 +12417,10 @@ exports[`The dump command run for the mineral-ui repository prints the JSON desc
                                 \\"structure\\": {}
                               },
                               {
-                                \\"name\\": \\"empty\\",
-                                \\"structure\\": {}
+                                \\"name\\": \\"unsupported\\",
+                                \\"structure\\": {
+                                  \\"raw\\": \\"unknown\\"
+                                }
                               }
                             ]
                           }
@@ -12526,8 +12568,10 @@ exports[`The dump command run for the mineral-ui repository prints the JSON desc
                                 }
                               },
                               {
-                                \\"name\\": \\"empty\\",
-                                \\"structure\\": {}
+                                \\"name\\": \\"unsupported\\",
+                                \\"structure\\": {
+                                  \\"raw\\": \\"unknown\\"
+                                }
                               }
                             ]
                           }
@@ -12716,8 +12760,10 @@ exports[`The dump command run for the mineral-ui repository prints the JSON desc
                                 }
                               },
                               {
-                                \\"name\\": \\"empty\\",
-                                \\"structure\\": {}
+                                \\"name\\": \\"unsupported\\",
+                                \\"structure\\": {
+                                  \\"raw\\": \\"unknown\\"
+                                }
                               }
                             ]
                           }
@@ -12829,8 +12875,10 @@ exports[`The dump command run for the mineral-ui repository prints the JSON desc
                                 }
                               },
                               {
-                                \\"name\\": \\"empty\\",
-                                \\"structure\\": {}
+                                \\"name\\": \\"unsupported\\",
+                                \\"structure\\": {
+                                  \\"raw\\": \\"unknown\\"
+                                }
                               }
                             ]
                           }
@@ -12997,8 +13045,10 @@ exports[`The dump command run for the mineral-ui repository prints the JSON desc
                                 }
                               },
                               {
-                                \\"name\\": \\"empty\\",
-                                \\"structure\\": {}
+                                \\"name\\": \\"unsupported\\",
+                                \\"structure\\": {
+                                  \\"raw\\": \\"unknown\\"
+                                }
                               }
                             ]
                           }
@@ -13033,8 +13083,10 @@ exports[`The dump command run for the mineral-ui repository prints the JSON desc
                                 \\"structure\\": {}
                               },
                               {
-                                \\"name\\": \\"empty\\",
-                                \\"structure\\": {}
+                                \\"name\\": \\"unsupported\\",
+                                \\"structure\\": {
+                                  \\"raw\\": \\"unknown\\"
+                                }
                               }
                             ]
                           }
@@ -13144,8 +13196,10 @@ exports[`The dump command run for the mineral-ui repository prints the JSON desc
                                 }
                               },
                               {
-                                \\"name\\": \\"empty\\",
-                                \\"structure\\": {}
+                                \\"name\\": \\"unsupported\\",
+                                \\"structure\\": {
+                                  \\"raw\\": \\"unknown\\"
+                                }
                               }
                             ]
                           }
@@ -13217,8 +13271,10 @@ exports[`The dump command run for the mineral-ui repository prints the JSON desc
                                 \\"structure\\": {}
                               },
                               {
-                                \\"name\\": \\"empty\\",
-                                \\"structure\\": {}
+                                \\"name\\": \\"unsupported\\",
+                                \\"structure\\": {
+                                  \\"raw\\": \\"unknown\\"
+                                }
                               }
                             ]
                           }
@@ -13256,8 +13312,10 @@ exports[`The dump command run for the mineral-ui repository prints the JSON desc
                                 \\"structure\\": {}
                               },
                               {
-                                \\"name\\": \\"empty\\",
-                                \\"structure\\": {}
+                                \\"name\\": \\"unsupported\\",
+                                \\"structure\\": {
+                                  \\"raw\\": \\"unknown\\"
+                                }
                               }
                             ]
                           }
@@ -13398,8 +13456,10 @@ exports[`The dump command run for the mineral-ui repository prints the JSON desc
                                 }
                               },
                               {
-                                \\"name\\": \\"empty\\",
-                                \\"structure\\": {}
+                                \\"name\\": \\"unsupported\\",
+                                \\"structure\\": {
+                                  \\"raw\\": \\"unknown\\"
+                                }
                               }
                             ]
                           }
@@ -13580,8 +13640,10 @@ exports[`The dump command run for the mineral-ui repository prints the JSON desc
                                 \\"structure\\": {}
                               },
                               {
-                                \\"name\\": \\"empty\\",
-                                \\"structure\\": {}
+                                \\"name\\": \\"unsupported\\",
+                                \\"structure\\": {
+                                  \\"raw\\": \\"unknown\\"
+                                }
                               }
                             ]
                           }
