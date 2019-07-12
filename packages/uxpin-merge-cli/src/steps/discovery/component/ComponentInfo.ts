@@ -12,7 +12,7 @@ export interface ComponentImplementationInfo {
 }
 
 export type ComponentImplementationLang = 'javascript' | 'typescript';
-export type ComponentImplementationFramework = 'reactjs';
+export type ComponentImplementationFramework = 'reactjs' | 'vue';
 
 export interface ComponentDocumenationInfo {
   path:string;
